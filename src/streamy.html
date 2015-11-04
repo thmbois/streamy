@@ -1,14 +1,46 @@
 <head>
   <title>streamy</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  <main>
+    {{> camarea}}
+  </main>
 </body>
+<template name="camarea">
+    <div id="camarea">
+      {{#transition wrap="true" in="flipInX" out="flipOutX"}}
+        {{#each InfoBoxes}}
+          {{> infobox}}
+        {{/each}}
+      {{/transition}}
+      {{> cam}}
+      {{> iframe}}
+    </div>
+</template>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="cam">
+  <div class="card-panel grey fixed" id="cam">
+    <span class="white-text">
+      Cam
+    </span>
+  </div>
+</template>
+
+<template name="infobox">
+  {{#if active}}
+    {{> displayer}}
+  {{/if}}
+</template>
+
+<template name="displayer">
+  <div class="card-panel {{color}} fixed displayer">
+    <span class="white-text">
+        {{text}}
+    </span>
+  </div>
+</template>
+<template name="iframe">
+  <iframe seamless="seamless" class="fixed" src="http://beta.tnotifier.net/api/widget/xFpzrcwlWMIh3Iz7nxMwdb3jFEBKd01ijIfLXGxp958uBw03auH1q0WM120AG1fA" width="" height=""></iframe>
 </template>
