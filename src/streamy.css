@@ -4,19 +4,23 @@
 }
 
 .displayer{
-  bottom: 270px;
-  left: 30px;
+
+  margin-bottom: 0px;
   width: 350px;
+  -webkit-transform: translate3d(0,0,0);
 }
 #cam{
-  bottom: 25px;
-  left: 30px;
+  margin-top: -1px;
   width: 350px;
   height: 250px;
+  -webkit-transform: translate3d(0,0,0);
 }
-
+#camarea {
+  bottom: 5px;
+  left: 5px;
+}
 iframe{
-  top: 25px;
+  top: 5px;
   left: 960px;
   margin: 0px;
   padding: 0px;
