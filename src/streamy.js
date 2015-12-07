@@ -1,5 +1,3 @@
-
-
 InfoBoxes = new Mongo.Collection("InfoBoxes");
 Controller = new Mongo.Collection("Controller");
 

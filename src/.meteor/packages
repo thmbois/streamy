@@ -22,6 +22,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 materialize:materialize
 flyandi:reactive-countdown
 meteortoys:allthings
-check
 webtempest:animate
 fortawesome:fontawesome
