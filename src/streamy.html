@@ -5,7 +5,8 @@
 <body>
   <main>
     {{> camarea}}
-    {{> iframe}}
+    {{> notifier}}
+    {{> twitch}}
   </main>
 </body>
 <template name="camarea">
@@ -44,6 +45,9 @@
   </div>
 </template>
 
-<template name="iframe">
-  <iframe seamless="seamless" class="fixed" src="https://tnotifier.net/api/widget/6OBYFmiKEY7XWfjW2DIgDORtwtF0iq0vpzEOfnrVm72iz6PD1N752ebIbHj6sfry" width="" height=""></iframe>
+<template name="notifier">
+    <iframe seamless="seamless" id="notifier" class="fixed" src="https://tnotifier.net/api/widget/6OBYFmiKEY7XWfjW2DIgDORtwtF0iq0vpzEOfnrVm72iz6PD1N752ebIbHj6sfry" width="" height=""></iframe>
+</template>
+<template name="twitch">
+    <iframe seamless="seamless" id="twitch" class="fixed" src="http://player.twitch.tv/?volume=0.92&channel=monstercat" width="" height=""></iframe>
 </template>

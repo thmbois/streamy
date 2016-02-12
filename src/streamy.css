@@ -19,7 +19,7 @@
   bottom: 5px;
   left: 5px;
 }
-iframe{
+#notifier{
   top: 5px;
   left: 960px;
   margin: 0px;
@@ -27,4 +27,11 @@ iframe{
   border: none;
   height: 150px;
   width:  500pxx;
+}
+#twitch{
+  right:5px;
+  top:5px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
 }
