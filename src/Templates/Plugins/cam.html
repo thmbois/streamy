@@ -1,0 +1,20 @@
+<template name="camarea">
+    <div class="fixed" id="camarea">
+      {{#transition wrap="true" in="flipInX" out="flipOutX"}}
+        {{#each InfoBoxes}}
+          {{> infobox}}
+        {{/each}}
+        {{#if CamActive}}
+          {{> cam}}
+        {{/if}}
+      {{/transition}}
+    </div>
+</template>
+
+<template name="cam">
+  <div class="card-panel grey" id="cam">
+    <span class="white-text">
+      Cam
+    </span>
+  </div>
+</template>

@@ -19,8 +19,12 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 
-materialize:materialize
+#materialize:materialize
 flyandi:reactive-countdown
 meteortoys:allthings
 webtempest:animate
 fortawesome:fontawesome
+tap:meteorstrap
+tap:bootstrap-magic
+tap:meteorstrap-bootswatch
+iron:router
