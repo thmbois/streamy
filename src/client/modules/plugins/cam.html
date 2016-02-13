@@ -1,14 +1,14 @@
 <template name="camarea">
-    <div class="fixed" id="camarea">
-      {{#transition wrap="true" in="flipInX" out="flipOutX"}}
-        {{#each InfoBoxes}}
-          {{> infobox}}
-        {{/each}}
-        {{#if CamActive}}
-          {{> cam}}
-        {{/if}}
-      {{/transition}}
-    </div>
+  <div class="fixed" id="camarea">
+    {{#transition wrap="true" in="flipInX" out="flipOutX"}}
+      {{#each InfoBoxes}}
+        {{> infobox}}
+      {{/each}}
+      {{#if CamActive}}
+        {{> cam}}
+      {{/if}}
+    {{/transition}}
+  </div>
 </template>
 
 <template name="cam">

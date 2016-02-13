@@ -1,11 +1,11 @@
 Router.plugin('Meteorstrap');
 
 Router.route('/', function () {
-  this.render('Welcome');
+  this.render('layoutMain');
 });
 Router.route('/overlay', function () {
-  this.render('Overlay');
+  this.render('layoutOverlay');
 });
 Router.route('/theme_editor', function () {
-  this.render('ThemeEditor');
+  this.render('layoutThemeEditor');
 });
