@@ -1,0 +1,5 @@
+.cam{
+  width: 350px;
+  height: 250px;
+  -webkit-transform: translate3d(0,0,0);
+}

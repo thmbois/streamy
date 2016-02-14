@@ -1,0 +1,37 @@
+<template name="plugins">
+    <div class="fixed top left">
+      {{#transition wrap="true" in="flipInX" out="flipOutX"}}
+        {{#each topLeft.data}}
+          <!-- {{this.type}} -->
+            {{> Template.dynamic template=this.type}}
+        {{/each}}
+        {{/transition}}
+    </div>
+
+    <div class="fixed top right">
+      {{#transition wrap="true" in="flipInX" out="flipOutX"}}
+        {{#each topRight.data}}
+          <!-- {{this.type}} -->
+          {{> Template.dynamic template=this.type}}
+        {{/each}}
+      {{/transition}}
+    </div>
+
+    <div class="fixed bottom left">
+      {{#transition wrap="true" in="flipInX" out="flipOutX"}}
+        {{#each bottomLeft.data}}
+          <!-- {{this.type}} -->
+          {{> Template.dynamic template=this.type}}
+        {{/each}}
+      {{/transition}}
+    </div>
+
+    <div class="fixed bottom right">
+      {{#transition wrap="true" in="flipInX" out="flipOutX"}}
+        {{#each bottomRight.data}}
+          <!-- {{this.type}} -->
+          {{> Template.dynamic template=this.type}}
+        {{/each}}
+      {{/transition}}
+    </div>
+  </template>
