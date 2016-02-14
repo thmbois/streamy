@@ -6,6 +6,9 @@ Router.route('/', function () {
 Router.route('/overlay', function () {
   this.render('layoutOverlay');
 });
-Router.route('/theme_editor', function () {
+Router.route('/overlay-raw', function () {
+  this.render('overlayRaw');
+});
+Router.route('/theme-editor', function () {
   this.render('layoutThemeEditor');
 });
