@@ -27,5 +27,16 @@
 }
 
 main{
+
+  //Todo: Need to fix
+  height: -webkit-calc(100% - 64px - 23px);
+  height:    -moz-calc(100% - 64px - 23px);
+  height:         calc(100% - 64px - 23px);
+
   position: relative;
+}
+
+html,body{
+  height: 100%;
+
 }
