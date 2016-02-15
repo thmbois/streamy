@@ -28,7 +28,6 @@ Template.info.helpers({
 });
 
 Template.infoItem.helpers({
-
   active: function(){
     return Template.instance().parent().state.equals('activeInfo',this.order) ;
   }

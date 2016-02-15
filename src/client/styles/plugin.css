@@ -14,8 +14,8 @@
   right: 5px;
 }
 
-.fixed {
-  position:fixed;
+.area {
+  position:absolute;
 }
 
 .plugin-panel{
@@ -24,4 +24,8 @@
 
 .absolute{
   position:absolute;
+}
+
+main{
+  position: relative;
 }

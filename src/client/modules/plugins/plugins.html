@@ -1,5 +1,5 @@
 <template name="plugins">
-    <div class="fixed top left">
+    <div class="area top left">
       {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
         {{#each topLeft.data}}
           <!-- {{this.type}} -->
@@ -8,7 +8,7 @@
       {{/animate}}
     </div>
 
-    <div class="fixed top right">
+    <div class="area top right">
       {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
         {{#each topRight.data}}
           <!-- {{this.type}} -->
@@ -17,7 +17,7 @@
       {{/animate}}
     </div>
 
-    <div class="fixed bottom left">
+    <div class="area bottom left">
       {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
         {{#each bottomLeft.data}}
           <!-- {{this.type}} -->
@@ -26,7 +26,7 @@
       {{/animate}}
     </div>
 
-    <div class="fixed bottom right">
+    <div class="area bottom right">
       {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
         {{#each bottomRight.data}}
           <!-- {{this.type}} -->

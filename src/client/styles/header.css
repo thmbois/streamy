@@ -1,7 +1,14 @@
 .navbar-brand img{
   height: 35px;
+  margin: auto;
+  position: relative
 }
 
 .navbar-brand {
-  padding: 15px;
+  height: 35px;
+  margin: 0 !important;
+  padding: 0;
+  position: absolute;               /* 2 */
+  top: 50%;                         /* 3 */
+  transform: translate(0, -50%)
 }
