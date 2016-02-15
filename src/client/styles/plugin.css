@@ -1,0 +1,31 @@
+.top {
+  top: 5px;
+}
+
+.bottom{
+  bottom: 5px;
+}
+
+.left{
+  left: 5px;
+}
+
+.right{
+  right: 5px;
+}
+
+.area {
+  position:absolute;
+}
+
+.plugin-panel{
+  margin: 0px;
+}
+
+.absolute{
+  position:absolute;
+}
+
+main{
+  position: relative;
+}

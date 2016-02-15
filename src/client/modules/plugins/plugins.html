@@ -1,0 +1,37 @@
+<template name="plugins">
+    <div class="area top left">
+      {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
+        {{#each topLeft.data}}
+          <!-- {{this.type}} -->
+            {{> Template.dynamic template=this.type}}
+        {{/each}}
+      {{/animate}}
+    </div>
+
+    <div class="area top right">
+      {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
+        {{#each topRight.data}}
+          <!-- {{this.type}} -->
+          {{> Template.dynamic template=this.type}}
+        {{/each}}
+      {{/animate}}
+    </div>
+
+    <div class="area bottom left">
+      {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
+        {{#each bottomLeft.data}}
+          <!-- {{this.type}} -->
+          {{> Template.dynamic template=this.type}}
+        {{/each}}
+      {{/animate}}
+    </div>
+
+    <div class="area bottom right">
+      {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
+        {{#each bottomRight.data}}
+          <!-- {{this.type}} -->
+          {{> Template.dynamic template=this.type}}
+        {{/each}}
+      {{/animate}}
+    </div>
+  </template>

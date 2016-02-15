@@ -1,0 +1,12 @@
+<template name="infoItem">
+  {{#if active}}
+    <div class="panel panel-default plugin-panel bg-{{color}} infoItem absolute">
+      <div class="panel-body">
+        <span class="white-text">
+            {{text}}
+        </span>
+        <i class="fa {{icon}} fa-2x pull-right white-text"></i>
+      </div>
+    </div>
+  {{/if}}
+</template>
