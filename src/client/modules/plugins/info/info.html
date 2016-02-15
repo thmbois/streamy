@@ -1,8 +1,10 @@
 <template name="info">
   <div class="info">
+    {{count}}
+    {{activeInfo}}
     {{#transition wrap="true" in="flipInX" out="flipOutX"}}
       {{#each info}}
-        {{> infoItem}}
+        {{> infoItem }}
       {{/each}}
     {{/transition}}
   </div>

@@ -29,4 +29,5 @@ tap:bootstrap-magic
 tap:meteorstrap-bootswatch
 iron:router
 jacklam:material-colors
-percolate:momentum
+reactive-dict
+aldeed:template-extension
