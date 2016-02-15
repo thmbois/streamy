@@ -17,4 +17,12 @@ if (!Info.findOne()){
     plugin_id:"EF3YgaGqn3XbdA3vg"
   });
 
+  Info.insert({
+    _id: "KCTpqHsK5JD5GtdBT",
+    text: "Other Info 01",
+    order: 1,
+    color: "orange-500",
+    icon: "fa-diamond",
+    plugin_id: "gKaXDExWEK3m6G4qA"
+  });
 }

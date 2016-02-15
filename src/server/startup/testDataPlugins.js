@@ -20,4 +20,12 @@ if (!Plugins.findOne()){
     }
   });
 
+  Plugins.insert({
+    _id: "gKaXDExWEK3m6G4qA",
+    name: "Info",
+    type: "info",
+    position: "top-right",
+    order: 2,
+    config: {}
+  });
 }
