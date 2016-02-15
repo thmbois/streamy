@@ -14,6 +14,7 @@ boilerplate-generator@1.0.4
 caching-compiler@1.0.0
 caching-html-compiler@1.0.2
 callback-hook@1.0.4
+ccorcos:animate@0.0.2
 cfs:http-methods@0.0.30
 cfs:micro-queue@0.0.6
 cfs:power-queue@0.9.11
@@ -118,6 +119,6 @@ tracker@1.0.9
 ui@1.0.8
 underscore@1.0.4
 url@1.0.5
+velocityjs:velocityjs@1.2.1
 webapp@1.2.3
 webapp-hashing@1.0.5
-webtempest:animate@0.1.9

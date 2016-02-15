@@ -1,11 +1,11 @@
 <template name="info">
   <div class="info">
-    {{count}}
-    {{activeInfo}}
-    {{#transition wrap="true" in="flipInX" out="flipOutX"}}
+    {{#animate in='transition.perspectiveDownIn' out='transition.fadeOut'}}
+    <!-- {{#transition wrap="true" in="flipInX" out="flipOutX"}} -->
       {{#each info}}
         {{> infoItem }}
       {{/each}}
-    {{/transition}}
+    <!-- {{/transition}} -->
+    {{/animate}}
   </div>
 </template>

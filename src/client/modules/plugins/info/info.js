@@ -1,13 +1,15 @@
 Template.info.created = function(){
   // counter starts at 0
   this.state = new ReactiveDict();
-  this.state.set('activeInfo', 0);
   var state = this.state;
-  var countdownInfo = new ReactiveCountdown(10, {
+  state.set('plugin_id', Template.instance().parent().data.data._id);
+  state.set('activeInfo', 1);
+
+  var countdownInfo = new ReactiveCountdown(20, {
     // Callback: Complete, called when the countdown has reached 0
     completed: function() {
       var counter = state.get('activeInfo');
-      if(counter<Info.find({plugin_id:"EF3YgaGqn3XbdA3vg"}).count()){
+      if(counter<Info.find({plugin_id:state.get('plugin_id')}).count()){
         counter ++;
       }else{
         counter = 1;
@@ -21,15 +23,13 @@ Template.info.created = function(){
 
 Template.info.helpers({
   info: function(){
-    return Info.find({plugin_id:"EF3YgaGqn3XbdA3vg"});
+    return Info.find({plugin_id:Template.instance().state.get('plugin_id')});
   }
 });
 
 Template.infoItem.helpers({
 
   active: function(){
-    //console.log(this.text+": "+(Template.instance().parent().state.get('activeInfo')==this.infoNumber));
-    console.log(Template.instance().parent().state.get('activeInfo'));
     return Template.instance().parent().state.equals('activeInfo',this.order) ;
   }
 });

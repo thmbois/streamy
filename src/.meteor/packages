@@ -22,7 +22,7 @@ insecure                # Allow all DB writes from clients (for prototyping)
 #materialize:materialize
 flyandi:reactive-countdown
 meteortoys:allthings
-webtempest:animate
+#webtempest:animate
 fortawesome:fontawesome
 tap:meteorstrap
 tap:bootstrap-magic
@@ -31,3 +31,4 @@ iron:router
 jacklam:material-colors
 reactive-dict
 aldeed:template-extension
+ccorcos:animate
