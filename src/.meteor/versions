@@ -1,5 +1,4 @@
 accounts-base@1.2.2
-ahref:irc@0.4.0
 aldeed:simple-schema@1.3.3
 aldeed:template-extension@4.0.0
 autopublish@1.0.4
@@ -66,6 +65,7 @@ localstorage@1.0.5
 logging@1.0.8
 meteor@1.1.10
 meteor-base@1.0.1
+meteor-platform@1.2.3
 meteorhacks:fast-render@2.9.0
 meteorhacks:inject-data@1.4.1
 meteorhacks:picker@1.0.3
@@ -109,6 +109,7 @@ service-configuration@1.0.5
 session@1.1.1
 spacebars@1.0.7
 spacebars-compiler@1.0.7
+standard-app-packages@1.0.6
 standard-minifiers@1.0.2
 tap:bootstrap-magic@1.0.0
 tap:i18n@1.5.1
@@ -116,6 +117,7 @@ tap:meteorstrap@1.0.0
 tap:meteorstrap-bootswatch@1.0.0
 templating@1.1.5
 templating-tools@1.0.0
+thmbois:irc@0.1.0
 tracker@1.0.9
 ui@1.0.8
 underscore@1.0.4
