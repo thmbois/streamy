@@ -1,0 +1,7 @@
+{
+  "twitchChatBot":{
+    "token":"Get Here:http://www.twitchapps.com/tmi",
+    "channel":"The channel you want to listen to.",
+    "userName":"The userName of the bot account."
+  }
+}
