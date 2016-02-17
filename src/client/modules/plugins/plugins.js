@@ -1,3 +1,5 @@
+Meteor.subscribe("Plugins");
+
 Template.plugins.helpers({
   topRight: function(){
     var data = Plugins.find({position:"top-right"},{fields: {'type':1}});
