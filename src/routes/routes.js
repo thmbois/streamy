@@ -1,4 +1,4 @@
-Router.plugin('Meteorstrap');
+// Router.plugin('Meteorstrap');
 
 Router.route('/', function () {
   this.render('layoutMain');
@@ -8,7 +8,4 @@ Router.route('/overlay', function () {
 });
 Router.route('/overlay-raw', function () {
   this.render('overlayRaw');
-});
-Router.route('/theme-editor', function () {
-  this.render('layoutThemeEditor');
 });

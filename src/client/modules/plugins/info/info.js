@@ -1,3 +1,5 @@
+Meteor.subscribe("Info");
+
 Template.info.created = function(){
   // counter starts at 0
   this.state = new ReactiveDict();

@@ -18,6 +18,6 @@
 //   });
 // });
 
-// Meteor.publish('examples', function() {
-//   return Plugins.find();
-// });
+Meteor.publish('Plugins', function() {
+    return Plugins.find();
+});
