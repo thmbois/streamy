@@ -1,0 +1,6 @@
+{
+  "name": "streamy",
+  "scripts": {
+    "start": "cd src && meteor --settings settings.json"
+  }
+}
