@@ -1,1 +1,1 @@
-Meteor.subscribe("ircMessages");
+Meteor.subscribe("ircMessages", 5);
