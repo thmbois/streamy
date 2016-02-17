@@ -24,10 +24,11 @@ flyandi:reactive-countdown
 meteortoys:allthings
 #webtempest:animate
 fortawesome:fontawesome
-tap:meteorstrap
-tap:bootstrap-magic
-tap:meteorstrap-bootswatch
+#tap:meteorstrap
+#tap:bootstrap-magic
+#tap:meteorstrap-bootswatch
 iron:router
+bootswatch:paper
 jacklam:material-colors
 reactive-dict
 aldeed:template-extension
