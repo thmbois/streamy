@@ -2,7 +2,7 @@ Meteor.subscribe("Plugins");
 
 Template.plugins.helpers({
   topRight: function(){
-    var data = Plugins.find({position:"top-right"},{fields: {'type':1}});
+    var data = Plugins.find({position:"top-right"},{fields: {'type':1},sort :{order:1}});
     var returnData = {
       "data": data,
       "active": data.count() > 0
@@ -10,7 +10,7 @@ Template.plugins.helpers({
     return returnData;
   },
   topLeft: function(){
-    var data = Plugins.find({position:"top-left"},{fields: {'type':1}});
+    var data = Plugins.find({position:"top-left"},{fields: {'type':1},sort :{order:1}});
     var returnData = {
       "data": data,
       "active": data.count() > 0
@@ -18,7 +18,7 @@ Template.plugins.helpers({
     return returnData;
   },
   bottomRight: function(){
-    var data = Plugins.find({position:"bottom-right"},{fields: {'type':1}});
+    var data = Plugins.find({position:"bottom-right"},{fields: {'type':1},sort :{order:1}});
     var returnData = {
       "data": data,
       "active": data.count() > 0
@@ -26,7 +26,7 @@ Template.plugins.helpers({
     return returnData;
   },
   bottomLeft: function(){
-    var data = Plugins.find({position:"bottom-left"},{fields: {'type':1}});
+    var data = Plugins.find({position:"bottom-left"},{fields: {'type':1},sort :{order:1}});
     var returnData = {
       "data": data,
       "active": data.count() > 0

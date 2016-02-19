@@ -1,4 +1,3 @@
-// IRC DOCs: https://node-irc.readthedocs.org/en/latest/API.html?highlight=password#client
 // TWITCH CHAT DOCs: http://help.twitch.tv/customer/de/portal/articles/1302780-twitch-irc
 
 IRCMessages.remove({});
@@ -19,3 +18,9 @@ var params = {
 
 client = new IRC(params);
 client.connect();
+
+// Meteor.methods({
+//   sendChatMessage:function(channel,message){
+//     client.say(channel,message);
+//   }
+// });
