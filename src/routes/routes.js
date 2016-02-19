@@ -9,3 +9,6 @@ Router.route('/overlay', function () {
 Router.route('/overlay-raw', function () {
   this.render('overlayRaw');
 });
+Router.route("/admin/", function(){
+  this.render("layoutAdminMain");
+});
