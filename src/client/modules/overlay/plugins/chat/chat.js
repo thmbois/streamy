@@ -1,4 +1,4 @@
-Meteor.subscribe("ircMessages", 30);
+Meteor.subscribe("ircMessages", 9);
 Meteor.subscribe("ircLinks");
 Meteor.subscribe("ircConnections");
 Meteor.subscribe("ircChannels");
