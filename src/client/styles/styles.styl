@@ -1,0 +1,161 @@
+@import "variables"
+
+body {
+  background-color: backgroundColor;
+}
+
+#wrapper {
+  width: 100%;
+}
+
+#page-wrapper {
+  padding: 0 15px;
+  min-height: 568px;
+  background-color: backgroundColorAcent;
+}
+
+@media(min-width:768px) {
+  #page-wrapper {
+    position: inherit;
+    margin: 0 0 0 250px;
+    padding: 0 30px;
+    border-left: 1px solid backgroundColorBorder;
+  }
+}
+
+.dropdown-mixin {
+  width: 310px;
+  min-width: 0;
+}
+
+.navbar-top-links {
+  margin-right: 0;
+  li {
+    display: inline-block;
+    a {
+      padding: 15px;
+      min-height: 50px;
+    }
+    &:last-child {
+      margin-right: 15px;
+    }
+  }
+  .dropdown-menu {
+    li {
+      display: block;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        padding: 3px 20px;
+        min-height: 0;
+        div {
+          white-space: normal;
+        }
+      }
+    }
+  }
+  .dropdown-messages {
+    @extends .dropdown-mixin
+    margin-left: 5px;
+  }
+  .dropdown-tasks {
+    @extends .dropdown-mixin
+    margin-left: -59px;
+  }
+  .dropdown-alerts {
+    @extends .dropdown-mixin
+    margin-left: -123px;
+  }
+  .dropdown-user {
+    right: 0;
+    left: auto;
+  }
+}
+
+.sidebar{
+  .sidebar-nav.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .sidebar-search {
+    padding: 15px;
+  }
+  ul{
+    li {
+      border-bottom: 1px solid #e7e7e7;
+      a.active {
+        background-color: #eee;
+      }
+    }
+  }
+  .arrow {
+    float: right;
+  }
+  .nav-second-level li {
+    border-bottom: 0!important;
+    a {
+      padding-left: 37px;
+    }
+  }
+}
+
+@media(min-width:768px) {
+  .sidebar {
+    z-index: 1;
+    position: absolute;
+    width: 250px;
+    margin-top: 51px;
+  }
+  .navbar-top-links .dropdown-messages,
+  .navbar-top-links .dropdown-tasks,
+  .navbar-top-links .dropdown-alerts {
+    margin-left: auto;
+  }
+}
+
+.btn-outline {
+  color: inherit;
+  background-color: transparent;
+  transition: all .5s;
+}
+
+.huge {
+  font-size: 40px;
+}
+
+.panel-watching{
+  border-color: watching - 10%;
+  .panel-heading {
+    border-color: watching - 10%;
+    color: watchingText;
+    background-color: watching;
+  }
+}
+
+.panel-poll{
+  border-color: poll - 10%;
+  .panel-heading {
+    border-color: poll - 10%;
+    color: pollText;
+    background-color: poll;
+  }
+}
+
+.panel-subscribe{
+  border-color: subscribe - 10%;
+  .panel-heading {
+    border-color: subscribe - 10%;
+    color: subscribeText;
+    background-color: subscribe;
+  }
+}
+
+.panel-donation{
+  border-color: donation - 10%;
+  .panel-heading {
+    border-color: donation - 10%;
+    color: donationText;
+    background-color: donation;
+  }
+}

@@ -1,0 +1,97 @@
+.navbar-brand {
+  height: 35px;
+  margin: 0 !important;
+  padding: 0;
+  position: absolute;               /* 2 */
+  top: 50%;                         /* 3 */
+  transform: translate(0, -50%)
+  img{
+    height: 35px;
+    margin: auto;
+    position: relative
+  }
+}
+
+.cam{
+  width: 350px;
+  height: 250px;
+  transform: translate3d(0,0,0);
+}
+
+.twitch{
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+.white-text {
+  color: white;
+}
+.twitch-frame{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 300px;
+  height: 169px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.info{
+  width: 350px;
+  height: 56px;
+  .infoItem{
+    width: 100%;
+    transform: translate3d(0,0,0);
+  }
+}
+.panel-chat {
+  .panel-body{
+    padding: 0px 5px;
+  }
+  .chat{
+    width: 350px;
+    overflow: hidden;
+    .chatItem{
+      width: 100%;
+      transform: translate3d(0,0,0);
+    }
+  }
+}
+
+.top {
+  top: 5px;
+}
+
+.bottom{
+  bottom: 5px;
+}
+
+.left{
+  left: 5px;
+}
+
+.right{
+  right: 5px;
+}
+
+.area {
+  position:absolute;
+}
+
+.plugin-panel{
+  margin: 0px;
+}
+
+.absolute{
+  position:absolute;
+}
+
+body, html{
+  main{
+    height: calc(100% - 64px - 23px);
+    position: relative;
+  }
+  height: 100%;
+  width:100%;
+  overflow-x: hidden;
+}
