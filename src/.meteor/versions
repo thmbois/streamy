@@ -98,6 +98,7 @@ spacebars@1.0.7
 spacebars-compiler@1.0.7
 standard-app-packages@1.0.6
 standard-minifiers@1.0.2
+stolinski:stylus-multi@1.4.3
 templating@1.1.5
 templating-tools@1.0.0
 thmbois:irc@0.1.0
