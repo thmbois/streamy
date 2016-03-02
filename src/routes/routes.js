@@ -22,6 +22,9 @@ Router.route("/admin/information", function(){
 Router.route("/admin/customize", function(){
   this.render("layoutAdminCustomize");
 });
+Router.route("/admin/customize/editPlugins", function(){
+  this.render("layoutAdminCustomizeEditPlugins");
+});
 /*Client Routes*/
 Router.route("/client/", function(){
   this.render("layoutClientMain");

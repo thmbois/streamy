@@ -1,0 +1,31 @@
+<template name="customizeEditPlugins">
+  <div id="page-wrapper">
+  	<div class="row">
+  		<div class="col-lg-12">
+  			<h1 class="page-header">Edit Plugins</h1>
+  		</div>
+  		<!-- /.col-lg-12 -->
+  	</div>
+  	<div class="row">
+      {{#each plugins}}
+  		  <div class="col-lg-4">
+          <!-- {{this.type}} -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <i class="fa fa-wrench fa-fw"></i> {{this.name}}
+              <div class="pull-right">
+                {{#quickRemoveButton collection="Plugins" _id=this._id class="btn btn-danger btn-sm"}}
+                  <i class="fa fa-trash"></i>
+                {{/quickRemoveButton}}
+              </div>
+            </div>
+            <div class="panel-body">
+                {{> quickForm collection="Plugins" doc=this id=this._id type="update"}}
+            </div>
+          </div>
+		    </div>
+      {{/each}}
+  	</div>
+  	<!-- /.row -->
+  </div>
+</template>

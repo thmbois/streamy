@@ -4,17 +4,35 @@
  */
 /* globals Examples:true, Mongo */
 
-// Declare 'Examples' collection.
+// Declare 'Plugins' collection.
 Plugins = new Mongo.Collection("Plugins");
 
-// // Define schema for Examples collection.
-// Examples.attachSchema({
-//   title: {
-//     type: String,
-//     label: 'Title',
-//     max: 200
-//   }
-// });
+// Define schema for Examples collection.
+Plugins.attachSchema({
+  name: {
+    type: String,
+    max: 200
+  },
+  type: {
+    type: String,
+    max: 200,
+    allowedValues: ['info','cam', 'chat', 'twitch']
+  },
+  position: {
+    type: String,
+    max: 200,
+    allowedValues: ['top-left','top-right', 'bottom-left', 'bottom-right']
+  },
+  order: {
+    type: Number,
+    min: 0
+  }
+  // ,
+  // config: {
+  //   type: Object,
+  //   optional: true
+  // }
+});
 
 // // Add helpers to Examples collection object.
 // Examples.helpers({
