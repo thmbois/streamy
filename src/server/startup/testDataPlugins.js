@@ -28,4 +28,12 @@ if (!Plugins.findOne()){
     order: 2,
     config: {}
   });
+
+  Plugins.insert({
+    name: "Chat",
+    type: "chat",
+    position: "bottom-right",
+    order: 1,
+    config: {}
+  });
 }
