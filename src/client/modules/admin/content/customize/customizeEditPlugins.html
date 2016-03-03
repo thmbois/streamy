@@ -14,7 +14,7 @@
           <div class="panel-heading">
             <i class="fa fa-wrench fa-fw"></i> {{this.name}}
             <div class="pull-right">
-              {{#quickRemoveButton collection="Plugins" _id=this._id class="btn btn-danger btn-sm"}}
+              {{#quickRemoveButton collection="Plugins" onError=onError onSuccess=onSuccess beforeRemove=beforeRemove _id=this._id class="btn btn-danger btn-sm"}}
               Remove <i class="fa fa-times"></i>
               {{/quickRemoveButton}}
             </div>
@@ -26,20 +26,20 @@
               <div class="panel-heading">Infobox content</div>
                 <div class="panel-body">
                   <div class="row">
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-md-12">
                       <div class="panel panel-default">
                         <div class="panel-heading">
                           Add Infobox
                         </div>
                         <div class="panel-body">
-                          {{#autoForm collection="Info" id=(add "addInfoForm-" this._id) type="insert"}}
+                          {{#autoForm collection="Info" resetOnSuccess=false id=(add "addInfoForm-" this._id) type="insert"}}
                             <fieldset>
                               {{> afQuickField name='text' rows=2}}
                               {{> afQuickField name='hue' options="allowed"}}
                               {{> afQuickField name='saturation' options="allowed"}}
                               {{> afQuickField name='icon'}}
                               {{> afQuickField name='order'}}
-                              <div class="hidden">
+                              <div class="">
                                 {{> afQuickField name='plugin_id' value=this._id}}
                               </div>
                             </fieldset>
@@ -49,12 +49,12 @@
                       </div>
                     </div>
                     {{#each infos this._id}}
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-md-12">
                       <div class="panel panel-default">
                         <div class="panel-heading">
                           Edit Infobox
                           <div class="pull-right">
-                            {{#quickRemoveButton collection="Info" _id=this._id class="btn btn-danger btn-sm"}}
+                            {{#quickRemoveButton collection="Info" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger btn-sm"}}
                             Remove <i class="fa fa-times"></i>
                             {{/quickRemoveButton}}
                           </div>

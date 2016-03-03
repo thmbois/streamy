@@ -41,3 +41,5 @@ aldeed:collection2
 aldeed:autoform
 aldeed:delete-button
 dburles:collection-helpers
+chrismbeckett:toastr
+bloodsucker:bootstrap3-modals
