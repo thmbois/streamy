@@ -1,0 +1,40 @@
+<!-- <template name="tweet">
+<div class="panel panel-default plugin-panel bg-grey-800 chatItem absolute">
+<div class="panel-body">
+<b class="white-text">
+{{user.screen_name}}:
+</b>
+<span class="white-text">
+{{text}}
+</span>
+</div>
+</div>
+</template> -->
+
+<template name="tweet">
+  <div class="panel panel-default plugin-panel bg-light-blue-500 tweet absolute white-text">
+    <div class="panel-body">
+      <div class="media">
+        <div class="media-left">
+          <img class="media-object img-rounded" src="{{user.profile_image_url_https}}" alt="">
+          <p><i class="fa fa-twitter-square"></i> {{humanizeInt user.followers_count}}</p>
+        </div>
+        <div class="media-body">
+          <h6 style="margin-top: 0">
+            <strong class="white-text">@{{user.screen_name}}:</strong>
+            {{#if user.verified}}
+            <span class="fa fa-stack pull-right">
+              <i class="fa fa-certificate fa-stack-2x"></i>
+              <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+            </span>
+            {{/if}}
+          </h6>
+          <p>
+            {{text}}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</template>

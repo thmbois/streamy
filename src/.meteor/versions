@@ -105,8 +105,10 @@ reactive-var@1.0.6
 reload@1.1.4
 retry@1.0.4
 routepolicy@1.0.6
+schiller:twit@0.0.3
 service-configuration@1.0.5
 session@1.1.1
+sewdn:humanize@1.4.2
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 standard-app-packages@1.0.6

@@ -23,4 +23,4 @@ if(chatBotSettings){
   //     client.say(channel,message);
   //   }
   // });
-}
+} else {console.log("Settings.json needs twitch token, channelName and userName! Please have a look at the example")};
