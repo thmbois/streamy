@@ -18,7 +18,7 @@ if(twitterAuth){
   //   console.log(data.id);
   // })
 
-  var stream = T.stream('statuses/filter', { track: '#Fessenheim' })
+  var stream = T.stream('statuses/filter', { track: '#freshfields' })
 
   stream.on('tweet', Meteor.bindEnvironment(function (tweet) {
     var tweetData = {
