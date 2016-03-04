@@ -18,7 +18,7 @@ if(twitterAuth){
   //   console.log(data.id);
   // })
 
-  var stream = T.stream('statuses/filter', { track: '#daviscup' })
+  var stream = T.stream('statuses/filter', { track: twitterAuth.hashtag })
 
   stream.on('tweet', Meteor.bindEnvironment(function (tweet) {
     var tweetData = {
