@@ -39,4 +39,4 @@ if(twitterAuth){
   //     client.say(channel,message);
   //   }
   // });
-}else {console.log("Settings.json needs twitter keys and secrets! Please have a look at the example")};
+} else {console.log("Settings.json needs twitter keys and secrets! Please have a look at the example")};
