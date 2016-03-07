@@ -10,12 +10,15 @@ ServiceConfiguration.configurations.insert({
 });
 if(Meteor.users.find({},{roles:{ 'default-group': [ 'admin' ] }}).count()===0){
   var adminAccount = Meteor.settings.adminAccount;
-  admin = Accounts.createUser({
-    email: adminAccount.email,
-    password: adminAccount.password,
-    profile: { name: adminAccount.name }
-  });
-    console.log(admin+" created.");
-    Roles.addUsersToRoles(admin, ['admin'], 'default-group');
-    console.log(admin+" added to Admin group.");
+  if (adminAccount) {
+    admin = Accounts.createUser({
+      email: adminAccount.email,
+      password: adminAccount.password,
+      profile: { name: adminAccount.name }
+    });
+      console.log(admin+" created.");
+      Roles.addUsersToRoles(admin, ['admin'], 'default-group');
+      console.log(admin+" added to Admin group.");
+
+  } else {console.log("Settings.json needs email, password and name! Please have a look at the example");}
 }
