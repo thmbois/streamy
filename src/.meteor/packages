@@ -45,9 +45,9 @@ chrismbeckett:toastr
 bloodsucker:bootstrap3-modals
 
 #Accounts:
-#accounts-password
+accounts-password
 service-configuration
 alexbeauchemin:accounts-twitch
-useraccounts:bootstrap
+ian:accounts-ui-bootstrap-3
 alanning:roles
 ongoworks:security

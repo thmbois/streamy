@@ -1,0 +1,12 @@
+<template name="nav">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+    {{> topNav}}
+    {{#if isInRole 'admin' 'default-group'}}
+      {{> sideNavAdmin}}
+    {{else}}
+      {{> sideNavUser}}
+    {{/if}}
+
+  </nav>
+</template>

@@ -8,3 +8,14 @@ ServiceConfiguration.configurations.insert({
   redirectUri: Meteor.absoluteUrl() + '_oauth/twitch?close',
   secret: twitchAuth.secret
 });
+if(Meteor.users.find({},{roles:{ 'default-group': [ 'admin' ] }}).count()===0){
+  var adminAccount = Meteor.settings.adminAccount;
+  admin = Accounts.createUser({
+    email: adminAccount.email,
+    password: adminAccount.password,
+    profile: { name: adminAccount.name }
+  });
+    console.log(admin+" created.");
+    Roles.addUsersToRoles(admin, ['admin'], 'default-group');
+    console.log(admin+" added to Admin group.");
+}
