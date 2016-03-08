@@ -19,6 +19,7 @@ if(Meteor.users.find({},{roles:{ 'default-group': [ 'admin' ] }}).count()===0){
       console.log(admin+" created.");
       Roles.addUsersToRoles(admin, ['admin'], 'default-group');
       console.log(admin+" added to Admin group.");
+      console.log(admin+" you can login with Email: "+ adminAccount.email+" PW: "+adminAccount.password);
 
   } else {console.log("Settings.json needs email, password and name! Please have a look at the example");}
 }
