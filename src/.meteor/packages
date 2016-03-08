@@ -43,7 +43,6 @@ aldeed:delete-button
 dburles:collection-helpers
 chrismbeckett:toastr
 bloodsucker:bootstrap3-modals
-
 #Accounts:
 accounts-password
 service-configuration
@@ -51,3 +50,5 @@ alexbeauchemin:accounts-twitch
 ian:accounts-ui-bootstrap-3
 alanning:roles
 ongoworks:security
+schiller:twit
+sewdn:humanize

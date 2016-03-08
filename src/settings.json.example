@@ -12,5 +12,12 @@
     "email":"admin email",
     "name":"admin name",
     "password":"admin password"
+  },
+  "twitterWall":{
+    "consumer_key":"...",
+    "consumer_secret":"...",
+    "access_token":"...",
+    "access_token_secret":"...",
+    "hashtag":"Your hashtag here #here"
   }
 }
