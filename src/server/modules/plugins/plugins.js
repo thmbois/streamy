@@ -4,20 +4,12 @@
  */
 /* globals Meteor, Plugins */
 
-// Meteor.startup(function() {
-//   Plugins.allow({
-//     insert: function(userId, example) {
-//       return true;
-//     },
-//     update: function(userId, example) {
-//       return true;
-//     },
-//     remove: function(userId, example) {
-//       return true;
-//     }
-//   });
-// });
-
 Meteor.publish('Plugins', function() {
     return Plugins.find();
 });
+
+// No clients may insert, update, or remove plugins
+// Plugins.permit(['insert', 'update', 'remove']).never().apply();
+
+// Clients may insert, update, or remove plugins only if an admin user is logged in
+Plugins.permit(['insert', 'update', 'remove']).ifHasRole({role: 'admin', group: 'default-group'}).apply();
