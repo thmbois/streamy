@@ -1,0 +1,19 @@
+<template name="addPollModal">
+  <div class="modal-header">
+      <h4 class="modal-title">Add Poll</h4>
+  </div>
+  {{#autoForm collection="Polls" id="addPollForm" type="insert"}}
+    <fieldset>
+      <div class="modal-body">
+        {{> afQuickField name='question'}}
+        {{> afQuickField name='icon'}}
+        {{> afQuickField name='answers'}}
+        {{> afQuickField name='allowAddAnswers'}}
+      </div>
+    </fieldset>
+    <div class="modal-footer">
+      <button type="button" id="addPollModalClose" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="submit" id="addPollModalAdd" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
+    </div>
+  {{/autoForm}}
+</template>
