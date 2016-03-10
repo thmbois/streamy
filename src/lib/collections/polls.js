@@ -32,6 +32,10 @@ Polls.attachSchema({
     type: Boolean,
     defaultValue: false
   },
+  allowMultipleAnswers:{
+    type: Boolean,
+    defaultValue: false
+  },
   active:{
   	type: Boolean,
     defaultValue: true,
@@ -42,11 +46,20 @@ Polls.attachSchema({
   timestamp:{
     type: Number,
     autoValue: function () {
-      return new Date().getTime();
+      if (this.isInsert) {
+        return new Date().getTime();
+      }
     },
     autoform: {
       omit:true
     }
+  },
+  users:{
+    type: [String],
+    autoform: {
+      omit:true
+    },
+    optional: true
   }
 });
 

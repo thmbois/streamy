@@ -10,7 +10,9 @@
 		{{> userTopView}}
 		{{> userInteractionWithStream}}
 		{{> userPlaylist}}
-		{{> userPollAnswer}}
-		{{> userPoll}}
+		{{#if currentUser}}
+			{{> userPolls}}
+		{{/if}}
+		{{> pollsResults}}
 </div>
 </template>
