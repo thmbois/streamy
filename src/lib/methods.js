@@ -1,16 +1,16 @@
 Meteor.methods({
   vote: function (id,answers) {
-    // Make sure the user is logged in before inserting a task
+    // Make sure the user is logged in
     if (! this.userId) {
       throw new Meteor.Error("not-authorized");
     }
     var poll = Polls.findOne({_id:id, users:  { $nin: [this.userId] }});
     if (!poll) {
-      throw new Meteor.Error("you-already-voted");
+      throw new Meteor.Error("already-voted");
     }
     if (!poll.allowMultipleAnswers) {
       if (answers.length > 1) {
-        throw new Meteor.Error("dont-vote-for-multiple");
+        throw new Meteor.Error("not-allowed-vote-multiple");
       }
     }
     answers.forEach(function(answer) {
@@ -27,5 +27,30 @@ Meteor.methods({
         }
       );
     });
+  },
+  addAnswer: function (id,answer) {
+    // Make sure the user is logged in
+    if (! this.userId) {
+      throw new Meteor.Error("not-authorized");
+    }
+    var poll = Polls.findOne({_id:id, users:  { $nin: [this.userId] }});
+    if (!poll) {
+      throw new Meteor.Error("already-voted");
+    }
+    if (!poll.allowAddAnswers) {
+        throw new Meteor.Error("not-allowed-add-answers");
+    }
+    var newAnswer = {
+      text: answer,
+      count: 0
+    };
+    Polls.update(
+      {
+        '_id': id,
+      },
+      {
+        $addToSet:{ answers: newAnswer}
+      }
+    );
   }
 });

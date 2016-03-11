@@ -8,7 +8,7 @@ Template.pollBox.helpers({
         }
       }
     );
-    console.log(ret);
+    // console.log(ret);
     return ret;
   }
 });

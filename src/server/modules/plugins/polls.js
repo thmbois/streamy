@@ -8,9 +8,8 @@ Meteor.publish('Polls', function() {
 
   return Polls.find(
     {
-
+      active:true
     },{
-      active:true,
       sort: {
         timestamp:-1
       }
