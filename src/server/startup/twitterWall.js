@@ -18,7 +18,7 @@ if(twitterAuth){
   //   console.log(data.id);
   // })
 
-  var stream = T.stream('statuses/filter', { track: twitterAuth.hashtag })
+  var stream = T.stream('statuses/filter', { track: twitterAuth.hashtag });
 
   stream.on('tweet', Meteor.bindEnvironment(function (tweet) {
     var tweetData = {
@@ -31,7 +31,7 @@ if(twitterAuth){
     // console.log(tweetData);
     Twitter.insert(tweetData);
 
-  }))
+  }));
 
 
   // Meteor.methods({
@@ -39,4 +39,6 @@ if(twitterAuth){
   //     client.say(channel,message);
   //   }
   // });
-} else {console.log("Settings.json needs twitter keys and secrets! Please have a look at the example")};
+} else {
+  console.log("Settings.json needs twitter keys and secrets! Please have a look at the example");
+}
