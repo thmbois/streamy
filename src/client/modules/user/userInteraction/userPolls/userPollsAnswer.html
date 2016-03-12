@@ -1,0 +1,7 @@
+<template name="userPollsAnswer">
+  <li class="list-group-item">
+    <div class="radio">
+      <label><input type="{{#if ../allowMultipleAnswers}}checkbox{{else}}radio{{/if}}" name="answer{{../_id}}"><strong>{{text}}</strong></label>
+    </div>
+  </li>
+</template>

@@ -1,0 +1,13 @@
+<template name="answerResult">
+  <li class="list-group-item">
+    <p>
+      <strong>{{text}}</strong>
+      <span class="pull-right text-muted">{{count}} - {{percent count ../votes}}%</span>
+    </p>
+    <div class="progress">
+      <div class="progress-bar progress-bar" role="progressbar" aria-valuenow="{{percent count ../votes}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent count ../votes}}%">
+
+      </div>
+    </div>
+  </li>
+</template>
