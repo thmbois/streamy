@@ -16,7 +16,7 @@ Plugins.attachSchema({
   type: {
     type: String,
     max: 200,
-    allowedValues: ['info','cam', 'chat', 'twitch', 'twitter']
+    allowedValues: ['info','cam', 'chat', 'twitch', 'twitter','polls']
   },
   position: {
     type: String,

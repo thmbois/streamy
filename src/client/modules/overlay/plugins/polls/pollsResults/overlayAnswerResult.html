@@ -1,0 +1,13 @@
+<template name="overlayAnswerResult">
+  <li class="list-group-item answer">
+    <p>
+      {{text}}
+      <span class="pull-right text-muted">Votes: {{count}}</span>
+    </p>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="{{percent count ../votes}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent count ../votes}}%">
+        {{percent count ../votes}}%
+      </div>
+    </div>
+  </li>
+</template>

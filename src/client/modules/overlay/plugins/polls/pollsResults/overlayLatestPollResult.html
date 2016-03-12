@@ -1,0 +1,17 @@
+<template name="overlayLatestPollResult">
+  <div class="panel panel-default plugin-panel polls">
+    <div class="panel-body">
+      <div>
+        <p>
+          <strong>{{question}}</strong>
+          <span class="pull-right text-muted">Votes: {{votes}}</span>
+        </p>
+      </div>
+    </div>
+    <ul class="list-group">
+        {{#each answers}}
+          {{> overlayAnswerResult}}
+        {{/each}}
+    </ul>
+  </div>
+</template>
