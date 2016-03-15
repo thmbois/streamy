@@ -6,13 +6,11 @@
 				<div class="panel-heading">
 					<i class="fa fa-flag fa-fw"></i> Frequently asked questions (FAQ)
 				</div>
-				 <div class="panel-body">
-					<div class="list-group">
-						{{#each this}}
-							<p class="list-group-item"><strong>Q: {{question}}</strong> {{answer}}</p>
-						{{/each}}
-					</div>
-				</div>
+				<ul class="list-group">
+					{{#each this}}
+						<li class="list-group-item"><strong>Q: {{question}}</strong> {{answer}}</li>
+					{{/each}}
+				</ul>
 			</div>
 		</div>
 	</div>

@@ -6,15 +6,15 @@
 				<div class="panel-heading">
 					<i class="fa fa-link fa-fw"></i> Social Network
 				</div>
-				 <div class="panel-body">
-					<div class="list-group">
-						{{#each this}}
-							<a href="{{link}}" class="list-group-item" target="_blank">
+				<ul class="list-group">
+					{{#each this}}
+						<li class="list-group-item">
+							<a href="{{link}}" target="_blank">
 								<i class="fa fa-arrow-right fa-fw"></i> {{network}}
 							</a>
-						{{/each}}
-					</div>
-				</div>
+						</li>
+					{{/each}}
+				</ul>
 			</div>
 		</div>
 	</div>
