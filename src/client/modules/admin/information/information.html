@@ -7,11 +7,12 @@
 			<!-- /.col-lg-12 -->
 	</div>
 	<div class="row">
-		{{> about}}
+		<!-- {{> about}}
 		{{> faq}}
 		{{> social}}
 		{{> specs}}
-		{{> rules}}
+		{{> rules}} -->
+		{{> quickForm collection="BasicInfo" doc=info id="editBasicInfo" type="update" buttonContent=false autosave=true}}
 	</div>
 </div>
 </template>
