@@ -24,11 +24,23 @@ Social = new SimpleSchema({
   }
 });
 
+Component = new SimpleSchema({
+  type: {
+    type: String,
+    max: 200
+  },
+  spec: {
+    type: String,
+    max: 200
+  }
+});
+
+
 // Define schema for Examples collection.
 BasicInfo.attachSchema({
   title:{
     type: String,
-    max: 20
+    max: 50
   },
   information: {
     type: String,
@@ -45,5 +57,14 @@ BasicInfo.attachSchema({
   socialnetworks: {
     type: [Social],
     optional: true
+  },
+  specs:{
+	  type: [Component],
+	  optional: true
+  },
+  rules:{
+	type:[String],
+	optional: true,
+	max: 50
   }
 });
