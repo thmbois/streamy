@@ -1,0 +1,31 @@
+<template name="navPollResult">
+  {{#with latestPoll}}
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-messages">
+      <li>
+        <a href="#">
+          <div>
+            <strong>Latest Poll</strong>
+          </div>
+          <div>{{question}}</div>
+        </a>
+      </li>
+      {{#each answers}}
+        {{> navPollResultAnswer text=text count=count votes=../votes}}
+      {{/each}}
+      <li class="divider"></li>
+      <li>
+        <a id="navPollAddPollButton">
+          <div>
+            <i class="fa fa-plus fa-fw"></i> New Poll
+          </div>
+        </a>
+      </li>
+    </ul>
+    <!-- /.dropdown-messages -->
+  </li>
+{{/with}}
+</template>
