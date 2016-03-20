@@ -105,6 +105,10 @@ oauth2@1.1.5
 observe-sequence@1.0.7
 ongoworks:security@1.3.0
 ordered-dict@1.0.4
+peerlibrary:assert@0.2.5
+peerlibrary:fiber-utils@0.6.0
+peerlibrary:reactive-mongo@0.1.1
+peerlibrary:server-autorun@0.5.2
 promise@0.5.1
 raix:eventemitter@0.1.3
 random@1.0.5
@@ -117,8 +121,8 @@ routepolicy@1.0.6
 schiller:twit@0.0.3
 service-configuration@1.0.5
 session@1.1.1
-sha@1.0.4
 sewdn:humanize@1.4.2
+sha@1.0.4
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 srp@1.0.4

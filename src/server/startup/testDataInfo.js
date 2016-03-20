@@ -20,7 +20,6 @@ if (!Info.findOne()){
   });
 
   Info.insert({
-    _id: "KCTpqHsK5JD5GtdBT",
     text: "Other Info 01",
     order: 1,
     hue: "orange",

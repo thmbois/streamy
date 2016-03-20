@@ -52,3 +52,5 @@ alanning:roles
 ongoworks:security
 schiller:twit
 sewdn:humanize
+peerlibrary:reactive-mongo
+peerlibrary:server-autorun
