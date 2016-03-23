@@ -21,6 +21,12 @@ Plugins.permit(['insert', 'update', 'remove']).ifHasRole({role: 'admin', group: 
 //     twitterWall.start("#fcabvb");
 //   }
 // });
+function init(){
+
+}
+
+let chatBot = new ChatBot();
+chatBot.listen();
 let twitterWall = new TwitterWall();
 
 Tracker.autorun(function(){
@@ -34,9 +40,6 @@ Tracker.autorun(function(){
     twitterWall.start(hashtag);
   });
 });
-
-let chatBot = new ChatBot();
-
 Tracker.autorun(function(){
   var chatPlugins = Plugins.find({type:"chat"}, {fields: {configs: 1, type:1}}).fetch();
   chatBot.stopAllBots();
@@ -45,6 +48,6 @@ Tracker.autorun(function(){
       return el.config === "twitchChannel";
     });
     var channel = config[0].value;
-    chatBot.join(channel);
+    chatBot.join("#"+channel);
   });
 });

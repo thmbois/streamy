@@ -14,7 +14,7 @@ Template.twitter.helpers({
       return el.config === "twitterHashtag";
     });
     var hashtag = config[0].value;
-    console.log("Hashtag: ", hashtag, "ID: ", this._id);
+    //console.log("Hashtag: ", hashtag, "ID: ", this._id);
     return getTweets(hashtag);
   }
 });
