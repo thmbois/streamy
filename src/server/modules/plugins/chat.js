@@ -24,19 +24,22 @@ ChatBot = class ChatBot {
     // TWITCH CHAT DOCs: http://help.twitch.tv/customer/de/portal/articles/1302780-twitch-irc
     var chatBotSettings = Meteor.settings.twitchChatBot;
     if(chatBotSettings){
+
       var params = {
-        server: 'irc.twitch.tv',
-        port: 6667,
-        nick: chatBotSettings.userName,
-        password: chatBotSettings.token,
-        realname: chatBotSettings.userName,
-        username: chatBotSettings.userName,
-        channels: [],
-        debug: false,
-        stripColors: true
+          userName: chatBotSettings.userName,
+          realName: chatBotSettings.userName,
+          port: 6667,
+          localAddress: null,
+          debug: false,
+          showErrors: false,
+          autoRejoin: false,
+          autoConnect: true,
+          channels: [],
+          stripColors: true,
+          channelPrefixes: "&#"
       };
 
-      this.client = new IRC(params);
+      this.client = irc.client('irc.twitch.tv',chatBotSettings.userName,params);
       this.client.connect();
       this._enabled = true;
     } else {
