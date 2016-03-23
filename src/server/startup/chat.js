@@ -2,27 +2,21 @@
 var chatBotSettings = Meteor.settings.twitchChatBot;
 if(chatBotSettings){
   IRCMessages.remove({});
-
-  var params = {
-    server: 'irc.twitch.tv',
-    port: 6667,
-    nick: chatBotSettings.userName,
-    password: chatBotSettings.token,
-    realname: chatBotSettings.userName,
-    username: chatBotSettings.userName,
-    channels: [chatBotSettings.channels],
-    debug: false,
-    stripColors: true
-  };
-
-  client = new IRC(params);
-  client.connect();
-
-  // Meteor.methods({
-  //   sendChatMessage:function(channel,message){
-  //     client.say(channel,message);
-  //   }
-  // });
+  //
+  // var params = {
+  //   server: 'irc.twitch.tv',
+  //   port: 6667,
+  //   nick: chatBotSettings.userName,
+  //   password: chatBotSettings.token,
+  //   realname: chatBotSettings.userName,
+  //   username: chatBotSettings.userName,
+  //   channels: [chatBotSettings.channels],
+  //   debug: false,
+  //   stripColors: true
+  // };
+  //
+  // client = new IRC(params);
+  // client.connect();
 } else {
   console.log("Settings.json needs twitch token, channelName and userName! Please have a look at the example");
 }

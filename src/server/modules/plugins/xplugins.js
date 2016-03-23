@@ -24,13 +24,27 @@ Plugins.permit(['insert', 'update', 'remove']).ifHasRole({role: 'admin', group: 
 let twitterWall = new TwitterWall();
 
 Tracker.autorun(function(){
-  var twitterWalls = Plugins.find({type:"twitter"}, {fields: {configs: 1, type:1}}).fetch();
+  var twitterPlugins = Plugins.find({type:"twitter"}, {fields: {configs: 1, type:1}}).fetch();
   twitterWall.stopAllStreams();
-  twitterWalls.forEach(function(element) {
+  twitterPlugins.forEach(function(element) {
     var config = element.configs.filter(function (el) {
       return el.config === "twitterHashtag";
     });
     var hashtag = config[0].value;
     twitterWall.start(hashtag);
+  });
+});
+
+let chatBot = new ChatBot();
+
+Tracker.autorun(function(){
+  var chatPlugins = Plugins.find({type:"chat"}, {fields: {configs: 1, type:1}}).fetch();
+  chatBot.stopAllBots();
+  chatPlugins.forEach(function(element) {
+    var config = element.configs.filter(function (el) {
+      return el.config === "twitchChannel";
+    });
+    var channel = config[0].value;
+    chatBot.join(channel);
   });
 });

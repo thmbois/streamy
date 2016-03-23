@@ -9,7 +9,8 @@ Plugins = new Mongo.Collection("Plugins");
 
 Config = new SimpleSchema({
   config: {
-    type: String
+    type: String,
+    allowedValues: ['twitchChannel','twitterHashtag']
   },
   value: {
     type: String
