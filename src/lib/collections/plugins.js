@@ -7,6 +7,16 @@
 // Declare 'Plugins' collection.
 Plugins = new Mongo.Collection("Plugins");
 
+Config = new SimpleSchema({
+  config: {
+    type: String,
+    allowedValues: ['twitchChannel','twitterHashtag']
+  },
+  value: {
+    type: String
+  }
+});
+
 // Define schema for Examples collection.
 Plugins.attachSchema({
   name: {
@@ -26,12 +36,11 @@ Plugins.attachSchema({
   order: {
     type: Number,
     min: 0
+  },
+  configs: {
+    type: [Config],
+    optional: true
   }
-  // ,
-  // config: {
-  //   type: Object,
-  //   optional: true
-  // }
 });
 
 // // Add helpers to Examples collection object.
