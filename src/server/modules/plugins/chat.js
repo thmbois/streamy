@@ -34,7 +34,7 @@ ChatBot = class ChatBot {
       this.client.connect();
       this._enabled = true;
     } else {
-      console.log("Settings.json needs twitch token, channelName and userName! Please have a look at the example");
+      console.log("Settings.json needs twitch token and userName! Please have a look at the example");
     }
   }
   listen(){
