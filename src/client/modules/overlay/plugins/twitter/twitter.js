@@ -9,6 +9,7 @@ var getTweets = function (hashtag){
 
 Template.twitter.helpers({
   tweets: function(){
+    Meteor.subscribe("Plugins");
     var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
     var config = configs.filter(function (el) {
       return el.config === "twitterHashtag";

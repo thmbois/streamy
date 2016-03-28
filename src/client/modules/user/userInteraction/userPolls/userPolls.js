@@ -1,5 +1,6 @@
 Template.userPolls.helpers({
   polls: function(){
+    Meteor.subscribe("Polls");
     var polls = Polls.find({users:  { $nin: [Meteor.userId()] }});
     if(polls.count()>0){
             return polls;

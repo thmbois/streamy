@@ -1,6 +1,5 @@
-Meteor.subscribe("Info");
-
 Template.info.created = function(){
+  Meteor.subscribe("Info");
   // counter starts at 0
   this.state = new ReactiveDict();
   var state = this.state;
@@ -25,6 +24,7 @@ Template.info.created = function(){
 
 Template.info.helpers({
   info: function(){
+    Meteor.subscribe("Info");
     return Info.find({plugin_id:Template.instance().state.get('plugin_id')});
   }
 });

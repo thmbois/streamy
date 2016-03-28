@@ -1,7 +1,6 @@
-Meteor.subscribe("Plugins");
-
 Template.plugins.helpers({
   topRight: function(){
+    Meteor.subscribe("Plugins");
     var data = Plugins.find({position:"top-right"},{fields: {'type':1},sort :{order:1}});
     var returnData = {
       "data": data,
@@ -10,6 +9,7 @@ Template.plugins.helpers({
     return returnData;
   },
   topLeft: function(){
+    Meteor.subscribe("Plugins");
     var data = Plugins.find({position:"top-left"},{fields: {'type':1},sort :{order:1}});
     var returnData = {
       "data": data,
@@ -18,6 +18,7 @@ Template.plugins.helpers({
     return returnData;
   },
   bottomRight: function(){
+    Meteor.subscribe("Plugins");
     var data = Plugins.find({position:"bottom-right"},{fields: {'type':1},sort :{order:1}});
     var returnData = {
       "data": data,
@@ -26,6 +27,7 @@ Template.plugins.helpers({
     return returnData;
   },
   bottomLeft: function(){
+    Meteor.subscribe("Plugins");
     var data = Plugins.find({position:"bottom-left"},{fields: {'type':1},sort :{order:1}});
     var returnData = {
       "data": data,

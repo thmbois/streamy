@@ -23,8 +23,11 @@
             {{> quickForm collection="Plugins" autosave=true buttonContent=false doc=this id=(add "editPluginForm-" this._id) type="update"}}
             {{#if equals this.type "info"}}
             <div class="panel panel-default">
-              <div class="panel-heading">Infobox content</div>
-                <div class="panel-body">
+              <div class="panel-heading">
+                Infobox content
+                <button type="button" class="btn btn-default btn-sm pull-right toggleInfobox"><i class="fa {{#if hideInfobox}}fa-expand{{else}}fa-compress{{/if}}"></i></button>
+              </div>
+                <div class="panel-body infoboxBody {{#if hideInfobox}}hidden{{/if}}">
                   <div class="row">
                     <div class="col-md-12">
                       <div class="panel panel-default">

@@ -1,5 +1,3 @@
-
-
 var getIRCMessages = function (channel){
   Meteor.subscribe("ircMessages", 9,channel);
   return IRCMessages.find({channel:"#"+channel},{
@@ -11,6 +9,7 @@ var getIRCMessages = function (channel){
 
 Template.chat.helpers({
   channel: function () {
+    Meteor.subscribe("Plugins");
     var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
     var config = configs.filter(function (el) {
       return el.config === "twitchChannel";
@@ -19,6 +18,7 @@ Template.chat.helpers({
     return channel;
   },
   chat: function(){
+    Meteor.subscribe("Plugins");
     var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
     var config = configs.filter(function (el) {
       return el.config === "twitchChannel";
@@ -27,6 +27,7 @@ Template.chat.helpers({
     return getIRCMessages(channel);
   },
   count: function(){
+    Meteor.subscribe("Plugins");
     var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
     var config = configs.filter(function (el) {
       return el.config === "twitchChannel";
@@ -35,6 +36,7 @@ Template.chat.helpers({
     return getIRCMessages(channel).count();
   },
   counterPlusOne:  function(){
+    Meteor.subscribe("Plugins");
     var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
     var config = configs.filter(function (el) {
       return el.config === "twitchChannel";

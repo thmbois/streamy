@@ -1,6 +1,6 @@
-Meteor.subscribe("Polls");
 Template.pollBox.helpers({
   latestPoll: function(){
+    Meteor.subscribe("Polls");
     var ret = Polls.findOne({},
       {
         sort: {
