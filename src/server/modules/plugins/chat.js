@@ -21,7 +21,7 @@ ChatBot = class ChatBot {
           realName: chatBotSettings.userName,
           password: chatBotSettings.token,
           port: 6667,
-          debug: true,
+          debug: false,
           sasl: true,
           showErrors: false,
           autoRejoin: false,
