@@ -1,0 +1,18 @@
+<template name="userSpecs">
+{{#if this}}
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-list-alt fa-fw"></i> PC Specs
+				</div>
+				<ul class="list-group">
+					{{#each this}}
+					<li class="list-group-item"><strong>{{type}}</strong> {{spec}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+{{/if}}
+</template>

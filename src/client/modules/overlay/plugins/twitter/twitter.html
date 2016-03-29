@@ -1,0 +1,9 @@
+<template name="twitter">
+  <div class="twitter">
+    {{#animate in='transition.perspectiveDownIn' out='transition.fadeOut'}}
+        {{#each tweets}}
+          {{> tweet }}
+        {{/each}}
+    {{/animate}}
+  </div>
+</template>

@@ -1,7 +1,21 @@
 {
   "twitchChatBot":{
     "token":"Get Here:http://www.twitchapps.com/tmi",
-    "channels":"The channels you want to listen to.",
     "userName":"The userName of the bot account."
+  },
+  "twitchAuth":{
+    "clientId":"Your Twitch-Apps clientId.",
+    "secret":"Your Twitch-Apps secret."
+  },
+  "adminAccount":{
+    "email":"admin email",
+    "name":"admin name",
+    "password":"admin password"
+  },
+  "twitterWall":{
+    "consumer_key":"...",
+    "consumer_secret":"...",
+    "access_token":"...",
+    "access_token_secret":"..."
   }
 }

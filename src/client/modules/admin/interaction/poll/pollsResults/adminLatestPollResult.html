@@ -1,0 +1,23 @@
+<template name="adminLatestPollResult">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <i class="fa fa-question-circle"></i> Results from Latest Poll:
+    </div>
+    <div class="panel-body">
+      <div>
+        <p>
+          <strong>{{question}}</strong>
+          <span class="pull-right text-muted">Votes: {{votes}}</span>
+        </p>
+      </div>
+    </div>
+    <ul class="list-group">
+        {{#each answers}}
+          {{> adminAnswerResult}}
+        {{/each}}
+    </ul>
+    <div class="panel-footer">
+      <button class="btn btn-default" id="pollAddPollButton">Start new Poll</button>
+    </div>
+  </div>
+</template>

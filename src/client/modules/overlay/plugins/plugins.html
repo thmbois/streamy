@@ -3,7 +3,7 @@
       {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
         {{#each topLeft.data}}
           <!-- {{this.type}} -->
-            {{> Template.dynamic template=this.type}}
+            {{> Template.dynamic template=this.type data=this}}
         {{/each}}
       {{/animate}}
     </div>
@@ -12,7 +12,7 @@
       {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
         {{#each topRight.data}}
           <!-- {{this.type}} -->
-          {{> Template.dynamic template=this.type}}
+          {{> Template.dynamic template=this.type data=this}}
         {{/each}}
       {{/animate}}
     </div>
@@ -21,7 +21,7 @@
       {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
         {{#each bottomLeft.data}}
           <!-- {{this.type}} -->
-          {{> Template.dynamic template=this.type}}
+          {{> Template.dynamic template=this.type data=this}}
         {{/each}}
       {{/animate}}
     </div>
@@ -30,7 +30,7 @@
       {{#animate in='transition.flipBounceYIn' out='transition.flipBounceYOut'}}
         {{#each bottomRight.data}}
           <!-- {{this.type}} -->
-          {{> Template.dynamic template=this.type}}
+          {{> Template.dynamic template=this.type data=this}}
         {{/each}}
       {{/animate}}
     </div>

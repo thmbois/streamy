@@ -1,24 +1,47 @@
-Meteor.subscribe("ircMessages", 9);
-Meteor.subscribe("ircLinks");
-Meteor.subscribe("ircConnections");
-Meteor.subscribe("ircChannels");
-
-var getIRCMessages = function (){
-  return IRCMessages.find({},{
+var getIRCMessages = function (channel){
+  Meteor.subscribe("ircMessages", 9,channel);
+  return IRCMessages.find({channel:"#"+channel},{
     sort: {
-      date_time:-1
+      timestamp:-1
     }
   });
 };
 
 Template.chat.helpers({
+  channel: function () {
+    Meteor.subscribe("Plugins");
+    var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
+    var config = configs.filter(function (el) {
+      return el.config === "twitchChannel";
+    });
+    var channel = config[0].value;
+    return channel;
+  },
   chat: function(){
-    return getIRCMessages();
+    Meteor.subscribe("Plugins");
+    var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
+    var config = configs.filter(function (el) {
+      return el.config === "twitchChannel";
+    });
+    var channel = config[0].value;
+    return getIRCMessages(channel);
   },
   count: function(){
-    return getIRCMessages().count();
+    Meteor.subscribe("Plugins");
+    var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
+    var config = configs.filter(function (el) {
+      return el.config === "twitchChannel";
+    });
+    var channel = config[0].value;
+    return getIRCMessages(channel).count();
   },
   counterPlusOne:  function(){
-    return getIRCMessages().count()+1;
+    Meteor.subscribe("Plugins");
+    var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
+    var config = configs.filter(function (el) {
+      return el.config === "twitchChannel";
+    });
+    var channel = config[0].value;
+    return getIRCMessages(channel).count()+1;
   }
 });

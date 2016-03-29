@@ -1,12 +1,9 @@
 <template name="layoutMain">
   <body>
-    <main><div class="container">
-      <h1>This is the Landing page.</h1>
-      <div class="list-group">
-        <a href="./overlay" class="list-group-item">Overlay</a>
-        <a href="./admin" class="list-group-item">Admin</a>
-        <a href="./client" class="list-group-item">Client</a>
-      </div>
-    </div></main>
-  </body>
+    <div id="wrapper">
+      {{> nav}}
+  	  {{> yield}}
+    </div>
+    <!-- /#wrapper -->
+</body>
 </template>

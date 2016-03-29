@@ -1,31 +1,74 @@
 // Router.plugin('Meteorstrap');
 
 Router.route('/', function () {
-  this.render('layoutMain');
+  Router.go("/overview");
 });
 Router.route('/overlay', function () {
   this.render('overlayRaw');
 });
-Router.route("/admin/", function(){
-  this.render("layoutAdminMain");
+
+var mainLayout = "layoutMain";
+
+function checkForAdmin(context, template) {
+  var loggedInUser = Meteor.user();
+
+  if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'], 'default-group')) {
+    // Router.go("/");
+    context.render("accessDenied");
+  }else {
+    context.render(template);
+  }
+  // context.render(template);
+}
+
+Router.route("/admin", function(){
+  this.layout(mainLayout);
+  // this.render("main");
+  checkForAdmin(this,"main");
 });
 /*Admin Routes*/
+
 Router.route("/admin/overlay", function(){
-  this.render("layoutAdminOverlay");
+  this.layout(mainLayout);
+  checkForAdmin(this,"overlay");
+}, {
+  name: 'admin.overlay'
 });
+
 Router.route("/admin/interaction", function(){
-  this.render("layoutAdminInteraction");
+  this.layout(mainLayout);
+  checkForAdmin(this,"interaction");
+}, {
+  name: 'admin.interaction'
 });
+
 Router.route("/admin/information", function(){
-  this.render("layoutAdminInformation");
+  this.layout(mainLayout);
+  checkForAdmin(this,"information");
+}, {
+  name: 'admin.information'
 });
+
 Router.route("/admin/customize", function(){
-  this.render("layoutAdminCustomize");
+  this.layout(mainLayout);
+  checkForAdmin(this,"customize");
+}, {
+  name: 'admin.customize'
 });
-/*Client Routes*/
-Router.route("/client/", function(){
-  this.render("layoutClientMain");
+
+Router.route("/admin/customize/editPlugins", function(){
+  this.layout(mainLayout);
+  checkForAdmin(this,"customizeEditPlugins");
+}, {
+  name: 'admin.customize.editPlugins'
 });
-Router.route("/client/information", function(){
-  this.render("layoutClientInformation");
+
+/*User Routes*/
+Router.route("/overview", function(){
+  this.layout(mainLayout);
+  this.render("userInteraction");
+});
+Router.route("/information", function(){
+  this.layout(mainLayout);
+  this.render("userInformation");
 });
