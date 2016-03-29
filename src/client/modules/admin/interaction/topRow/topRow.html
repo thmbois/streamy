@@ -1,7 +1,9 @@
 <template name="topRow">
-<div class="row">
-	{{> tasks}}
-	{{> links}}
-	{{> questions}}
-</div>
+{{#with info}}
+	<div class="row">
+		{{> tasks userTasks}}
+		{{> links userLinks}}
+		{{> questions userQuestions}}
+	</div>
+{{/with}}
 </template>
