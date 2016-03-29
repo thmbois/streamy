@@ -1,0 +1,62 @@
+<template name="customizeOverview">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Customize your Stream</h1>
+			</div>
+			<!-- /.col-lg-12 -->
+		</div>
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<i class="fa fa-bullseye fa-fw"></i> Insert Plugins
+					</div>
+					<div class="panel-body">
+						<p>Insert the plugins you wanted to display<br />on your Stream.<br />You can insert the following plugins:</p>
+						<ul class="list-group">
+							<li class="list-group-item">Textfield.</li>
+							<li class="list-group-item">Camerafield.</li>
+							<li class="list-group-item">Twitch Chat.</li>
+							<li class="list-group-item">Insert other Twitch Channels.</li>
+							<li class="list-group-item">Twitterwall.</li>
+							<li class="list-group-item">Display active polls.</li>
+						</ul>
+						<a href="{{pathFor route='admin.customize'}}" class="btn btn-primary btn-default">Insert your plugins</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<i class="fa fa-wrench fa-fw"></i> Edit Plugins
+					</div>
+					<div class="panel-body">
+						<p>After inserting your plugins you can customize them.<br />You can change the following attributes:</p>
+						<ul class="list-group">
+							<li class="list-group-item">Textvalues</li>
+							<li class="list-group-item">Color and saturation.</li>
+							<li class="list-group-item">Icon for the plugin.</li>
+							<li class="list-group-item">Display Order for plugin.</li>
+							<li class="list-group-item">Twitch Channles.</li>
+							<li class="list-group-item">Twitter Hashtags.</li>
+						</ul>
+						<a href="{{pathFor route='admin.customize.editPlugins'}}" class="btn btn-primary btn-default">Edit your plugins</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<i class="fa fa-eye fa-fw"></i> Stream Preview
+					</div>
+					<div class="panel-body">
+						<p>Hurray! Your streamoverlay is done.<br />After customizing your individual streamoverlay you can check it out here.</p>
+						<a href="{{pathFor route='admin.overlay'}}" class="btn btn-primary btn-default">Your streamoverlay</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+</template>
