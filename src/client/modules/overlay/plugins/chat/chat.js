@@ -1,5 +1,6 @@
-var getIRCMessages = function (channel){
-  Meteor.subscribe("ircMessages", 9,channel);
+var getIRCMessages = function (chatConfig){
+  var channel = chatConfig.channel;
+  Meteor.subscribe("ircMessages", chatConfig.maxMessages,channel);
   return IRCMessages.find({channel:"#"+channel},{
     sort: {
       timestamp:-1
@@ -10,38 +11,22 @@ var getIRCMessages = function (channel){
 Template.chat.helpers({
   channel: function () {
     Meteor.subscribe("Plugins");
-    var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
-    var config = configs.filter(function (el) {
-      return el.config === "twitchChannel";
-    });
-    var channel = config[0].value;
-    return channel;
+    var chatConfig = Plugins.findOne({_id:this._id},{fields:{chat:1}}).chat;
+    return chatConfig.channel;
   },
   chat: function(){
     Meteor.subscribe("Plugins");
-    var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
-    var config = configs.filter(function (el) {
-      return el.config === "twitchChannel";
-    });
-    var channel = config[0].value;
-    return getIRCMessages(channel);
+    var chatConfig = Plugins.findOne({_id:this._id},{fields:{chat:1}}).chat;
+    return getIRCMessages(chatConfig);
   },
   count: function(){
     Meteor.subscribe("Plugins");
-    var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
-    var config = configs.filter(function (el) {
-      return el.config === "twitchChannel";
-    });
-    var channel = config[0].value;
-    return getIRCMessages(channel).count();
+    var chatConfig = Plugins.findOne({_id:this._id},{fields:{chat:1}}).chat;
+    return getIRCMessages(chatConfig).count();
   },
   counterPlusOne:  function(){
     Meteor.subscribe("Plugins");
-    var configs = Plugins.findOne({_id:this._id},{fields:{configs:1}}).configs;
-    var config = configs.filter(function (el) {
-      return el.config === "twitchChannel";
-    });
-    var channel = config[0].value;
-    return getIRCMessages(channel).count()+1;
+    var chatConfig = Plugins.findOne({_id:this._id},{fields:{chat:1}}).chat;
+    return getIRCMessages(chatConfig).count()+1;
   }
 });

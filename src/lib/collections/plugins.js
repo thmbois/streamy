@@ -7,16 +7,28 @@
 // Declare 'Plugins' collection.
 Plugins = new Mongo.Collection("Plugins");
 
-Config = new SimpleSchema({
-  config: {
-    type: String,
-    allowedValues: ['twitchChannel','twitterHashtag']
-  },
-  value: {
+Schema ={};
+Schema.Twitter = new SimpleSchema({
+  hashtag:{
     type: String
   }
 });
-
+Schema.Chat = new SimpleSchema({
+  channel:{
+    type: String
+  },
+  maxMessages:{
+    type: Number
+  }
+});
+Schema.Twitch = new SimpleSchema({
+  channel:{
+    type: String
+  },
+  muted:{
+    type: Boolean
+  }
+});
 // Define schema for Examples collection.
 Plugins.attachSchema({
   name: {
@@ -37,9 +49,68 @@ Plugins.attachSchema({
     type: Number,
     min: 0
   },
-  configs: {
-    type: [Config],
-    optional: true
+  twitter: {
+    type: Schema.Twitter,
+    optional: true,
+    custom: function () {
+      var shouldBeRequired = this.field('type').value == "twitter";
+
+      if (shouldBeRequired) {
+        // inserts
+        if (!this.operator) {
+          if (!this.isSet || this.value === null || this.value === "") return "required";
+        }
+
+        // updates
+        else if (this.isSet) {
+          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
+          if (this.operator === "$unset") return "required";
+          if (this.operator === "$rename") return "required";
+        }
+      }
+    }
+  },
+  chat: {
+    type: Schema.Chat,
+    optional: true,
+    custom: function () {
+      var shouldBeRequired = this.field('type').value == "chat";
+
+      if (shouldBeRequired) {
+        // inserts
+        if (!this.operator) {
+          if (!this.isSet || this.value === null || this.value === "") return "required";
+        }
+
+        // updates
+        else if (this.isSet) {
+          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
+          if (this.operator === "$unset") return "required";
+          if (this.operator === "$rename") return "required";
+        }
+      }
+    }
+  },
+  twitch: {
+    type: Schema.Twitch,
+    optional: true,
+    custom: function () {
+      var shouldBeRequired = this.field('type').value == "twitch";
+
+      if (shouldBeRequired) {
+        // inserts
+        if (!this.operator) {
+          if (!this.isSet || this.value === null || this.value === "") return "required";
+        }
+
+        // updates
+        else if (this.isSet) {
+          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
+          if (this.operator === "$unset") return "required";
+          if (this.operator === "$rename") return "required";
+        }
+      }
+    }
   }
 });
 
