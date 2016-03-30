@@ -2,16 +2,16 @@
 	<div class="col-lg-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<i class="fa fa-music fa-fw"></i> Music wishes:
+				<i class="fa fa-link fa-fw"></i> Share a link with the stream.
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal">
-					<div class="form-group form-group-lg">
-						<div class="col-sm-12">
-						  <input class="form-control" type="text" placeholder="Interpret and Songtitle">
-						</div>
-					</div>
-				</form>
+				{{#autoForm collection="Interaction" id="addInteractionLink" type="insert" resetOnSuccess=false}}
+				    <fieldset>
+				      <div class="hidden">{{> afQuickField name='type' value="link"}}</div>
+				      {{> afQuickField name='link'}}
+				    </fieldset>
+				    <button type="submit" class="btn btn-primary">Add link <i class="fa fa-plus"></i></button>
+				  {{/autoForm}}
 			</div>
 		</div>
 	</div>
