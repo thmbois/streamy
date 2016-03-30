@@ -1,7 +1,9 @@
 Template.navPollResult.helpers({
   latestPoll: function(){
     Meteor.subscribe("Polls");
-    var polls = Polls.findOne({},
+    var polls = Polls.findOne({
+      active:true
+    },
       {
         limit: 1,
         sort: {

@@ -1,0 +1,18 @@
+<template name="managePollsShowPolls">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          {{title}}
+        </div>
+        <div class="panel-body">
+          {{#each polls}}
+            {{> managePollsPoll}}
+          {{else}}
+          No polls found.
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

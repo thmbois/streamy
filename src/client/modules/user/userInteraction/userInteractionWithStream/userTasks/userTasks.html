@@ -1,0 +1,18 @@
+<template name="userTasks">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-tasks fa-fw"></i> Do you got some tasks for the stream?
+			</div>
+			<div class="panel-body">
+				{{#autoForm collection="Interaction" id="addInteractionTask" type="insert" resetOnSuccess=false}}
+				    <fieldset>
+				      <div class="hidden">{{> afQuickField name='type' value="task"}}</div>
+				      {{> afQuickField name='task'}}
+				    </fieldset>
+				    <button type="submit" class="btn btn-primary">Add task <i class="fa fa-plus"></i></button>
+				  {{/autoForm}}
+			</div>
+		</div>
+	</div>
+</template>

@@ -8,7 +8,7 @@
     </div>
     <div class="row">
       {{#each plugins}}
-      <div class="col-lg-4 col-md-6">
+      <div class="col-md-6">
         <!-- {{this.type}} -->
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -20,7 +20,21 @@
             </div>
           </div>
           <div class="panel-body">
-            {{> quickForm collection="Plugins" autosave=true buttonContent=false doc=this id=(add "editPluginForm-" this._id) type="update"}}
+            <!-- {{> quickForm collection="Plugins" autosave=true buttonContent=false doc=this id=(add "editPluginForm-" this._id) type="update"}} -->
+            {{#autoForm collection="Plugins" autosave=true buttonContent=false doc=this id=(add "editPluginForm-" this._id) type="update"}}
+              <fieldset>
+                {{> afQuickField name='name'}}
+                {{> afQuickField name='type' options="allowed"}}
+                {{> afQuickField name='position' options="allowed"}}
+                {{> afQuickField name='order'}}
+                {{#if afFieldValueIs name="type" value="chat"}}
+                  {{> afQuickField name="chat"}}
+                {{/if}}
+                {{#if afFieldValueIs name="type" value="twitch"}}
+                  {{> afQuickField name="twitch"}}
+                {{/if}}
+              </fieldset>
+            {{/autoForm}}
             {{#if equals this.type "info"}}
             <div class="panel panel-default">
               <div class="panel-heading">

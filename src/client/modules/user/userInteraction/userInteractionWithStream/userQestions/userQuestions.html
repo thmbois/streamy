@@ -1,0 +1,18 @@
+<template name="userQuestions">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-question fa-fw"></i> Do you got some Quesions to the stream?
+			</div>
+			<div class="panel-body">
+				{{#autoForm collection="Interaction" id="addInteractionQuestion" type="insert" resetOnSuccess=false}}
+				    <fieldset>
+				      <div class="hidden">{{> afQuickField name='type' value="question"}}</div>
+				      {{> afQuickField name='question'}}
+				    </fieldset>
+				    <button type="submit" class="btn btn-primary">Add question <i class="fa fa-plus"></i></button>
+				  {{/autoForm}}
+			</div>
+		</div>
+	</div>
+</template>

@@ -4,7 +4,25 @@
       <i class="fa fa-wrench fa-fw"></i> Insert a plugin.
     </div>
     <div class="panel-body">
-        {{> quickForm collection="Plugins" id="insertPluginForm" type="insert"}}
+        <!-- {{> quickForm collection="Plugins" id="insertPluginForm" type="insert"}} -->
+        {{#autoForm collection="Plugins" id="insertPluginForm" type="insert"}}
+          <fieldset>
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='type' options="allowed"}}
+            {{> afQuickField name='position' options="allowed"}}
+            {{> afQuickField name='order'}}
+            {{#if afFieldValueIs name="type" value="chat"}}
+              {{> afQuickField name="chat"}}
+            {{/if}}
+            {{#if afFieldValueIs name="type" value="twitter"}}
+              {{> afQuickField name="twitter"}}
+            {{/if}}
+            {{#if afFieldValueIs name="type" value="twitch"}}
+              {{> afQuickField name="twitch"}}
+            {{/if}}
+            <button type="submit" class="btn btn-primary">Insert</button>
+          </fieldset>
+        {{/autoForm}}
     </div>
   </div>
 </template>

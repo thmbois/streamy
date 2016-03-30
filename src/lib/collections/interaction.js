@@ -1,122 +1,112 @@
-/**
- * @file
- * Defines 'Examples' collections and helpers.
- */
-/* globals Examples:true, Mongo */
-
 // Declare 'Plugins' collection.
-Plugins = new Mongo.Collection("Plugins");
+Interaction = new Mongo.Collection("Interaction");
 
-Schema ={};
-Schema.Twitter = new SimpleSchema({
-  hashtag:{
-    type: String
-  }
-});
-Schema.Chat = new SimpleSchema({
-  channel:{
-    type: String
-  },
-  maxMessages:{
-    type: Number
-  }
-});
-Schema.Twitch = new SimpleSchema({
-  channel:{
-    type: String
-  },
-  muted:{
-    type: Boolean
-  }
-});
-// Define schema for Examples collection.
-Plugins.attachSchema({
-  name: {
+SharedLink = new SimpleSchema({
+  title: {
     type: String,
     max: 200
   },
-  type: {
+  url: {
     type: String,
-    max: 200,
-    allowedValues: ['info','cam', 'chat', 'twitch', 'twitter','polls']
-  },
-  position: {
-    type: String,
-    max: 200,
-    allowedValues: ['top-left','top-right', 'bottom-left', 'bottom-right']
-  },
-  order: {
-    type: Number,
-    min: 0
-  },
-  twitter: {
-    type: Schema.Twitter,
-    optional: true,
-    custom: function () {
-      var shouldBeRequired = this.field('type').value == "twitter";
-
-      if (shouldBeRequired) {
-        // inserts
-        if (!this.operator) {
-          if (!this.isSet || this.value === null || this.value === "") return "required";
-        }
-
-        // updates
-        else if (this.isSet) {
-          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
-          if (this.operator === "$unset") return "required";
-          if (this.operator === "$rename") return "required";
-        }
-      }
-    }
-  },
-  chat: {
-    type: Schema.Chat,
-    optional: true,
-    custom: function () {
-      var shouldBeRequired = this.field('type').value == "chat";
-
-      if (shouldBeRequired) {
-        // inserts
-        if (!this.operator) {
-          if (!this.isSet || this.value === null || this.value === "") return "required";
-        }
-
-        // updates
-        else if (this.isSet) {
-          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
-          if (this.operator === "$unset") return "required";
-          if (this.operator === "$rename") return "required";
-        }
-      }
-    }
-  },
-  twitch: {
-    type: Schema.Twitch,
-    optional: true,
-    custom: function () {
-      var shouldBeRequired = this.field('type').value == "twitch";
-
-      if (shouldBeRequired) {
-        // inserts
-        if (!this.operator) {
-          if (!this.isSet || this.value === null || this.value === "") return "required";
-        }
-
-        // updates
-        else if (this.isSet) {
-          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
-          if (this.operator === "$unset") return "required";
-          if (this.operator === "$rename") return "required";
-        }
-      }
-    }
+	  regEx: SimpleSchema.RegEx.Url,
+    max: 200
   }
 });
 
-// // Add helpers to Examples collection object.
-// Examples.helpers({
-//   titleShort: function() {
-//     return this.title.substring(0, 50);
-//   }
-// });
+// Define schema for Examples collection.
+Interaction.attachSchema({
+  type:{
+    type: String,
+    allowedValues: ['question','link','task']
+  },
+  question:{
+    type: String,
+  	optional: true,
+    max: 100,
+    autoform: {
+      rows: 4
+    },
+    custom: function () {
+      var shouldBeRequired = this.field('type').value == "question";
+
+      if (shouldBeRequired) {
+        // inserts
+        if (!this.operator) {
+          if (!this.isSet || this.value === null || this.value === "") return "required";
+        }
+
+        // updates
+        else if (this.isSet) {
+          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
+          if (this.operator === "$unset") return "required";
+          if (this.operator === "$rename") return "required";
+        }
+      }
+    }
+  },
+  link: {
+    type: SharedLink,
+    optional: true,
+    custom: function () {
+      var shouldBeRequired = this.field('type').value == "link";
+
+      if (shouldBeRequired) {
+        // inserts
+        if (!this.operator) {
+          if (!this.isSet || this.value === null || this.value === "") return "required";
+        }
+
+        // updates
+        else if (this.isSet) {
+          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
+          if (this.operator === "$unset") return "required";
+          if (this.operator === "$rename") return "required";
+        }
+      }
+    }
+  },
+  task: {
+    type: String,
+    optional: true,
+    max: 250,
+    autoform: {
+      rows: 4
+    },
+    custom: function () {
+      var shouldBeRequired = this.field('type').value == "task";
+
+      if (shouldBeRequired) {
+        // inserts
+        if (!this.operator) {
+          if (!this.isSet || this.value === null || this.value === "") return "required";
+        }
+
+        // updates
+        else if (this.isSet) {
+          if (this.operator === "$set" && this.value === null || this.value === "") return "required";
+          if (this.operator === "$unset") return "required";
+          if (this.operator === "$rename") return "required";
+        }
+      }
+    }
+  },
+  timestamp:{
+    type: Number,
+    autoValue: function () {
+      if (this.isInsert) {
+        return new Date().getTime();
+      }
+    },
+    autoform: {
+      omit:true
+    }
+  },
+  userId:{
+    type: String,
+    regEx: SimpleSchema.RegEx.Id,
+    autoform: {
+      omit:true
+    },
+    optional:true
+  }
+});

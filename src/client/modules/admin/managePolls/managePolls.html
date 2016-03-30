@@ -1,0 +1,11 @@
+<template name="managePolls">
+  <div id="page-wrapper">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <h1 class="page-header">Manage Polls</h1>
+                  </div>
+              </div>
+        {{> managePollsShowPolls polls=activePolls title="Active Polls"}}
+        {{> managePollsShowPolls polls=inActivePolls title="Old Polls"}}
+  </div>
+</template>

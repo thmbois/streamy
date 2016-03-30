@@ -23,7 +23,6 @@ Template.customizeEditPlugins.helpers({
     },
     beforeRemove: function () {
       return function (collection, id) {
-        var doc = collection.findOne(id);
         var context = this;
         var bModal = BModals.showNew('customizeConfirmModal', {
           context:context
