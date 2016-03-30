@@ -1,6 +1,6 @@
 <template name="twitch">
   <div class="twitch-frame panel panel-default plugin-panel">
     <iframe seamless="seamless" class="twitch"
-    src="http://player.twitch.tv/?{{#if config.muted}}muted&{{/if}}branding=false&html5&showInfo=false&channel={{config.channel}}"></iframe>
+    src="http://player.twitch.tv/?{{#if config.muted}}muted&{{else}}!muted&{{/if}}branding=false&html5&showInfo=false&channel={{config.channel}}"></iframe>
   </div>
 </template>
