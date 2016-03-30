@@ -10,7 +10,9 @@ body {
   margin-left: 2px;
   font-size: 1em;
 }
-
+.embed-responsive-9by16 {
+    padding-bottom: 50%;
+}
 .navbar-brand {
   padding: 0px; /* firefox bug fix */
 }
@@ -19,11 +21,17 @@ body {
   padding: 15px; /* firefox bug fix */
   width: auto;
 }
+@media (min-width:1200px){
+  .embed-responsive-9by16 {
+      padding-bottom: 120%;
+  }
+}
 
 @media (min-width: 768px){
     .sidebar {
       margin-top: 64px !important;
     }
+
 }
 
 .sidebar {
