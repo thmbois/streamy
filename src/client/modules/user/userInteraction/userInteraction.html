@@ -8,11 +8,11 @@
 		<!-- /.col-lg-12 -->
 	</div>
 		{{> userTopView}}
-		{{> userStream}}
-		{{> userInteractionWithStream}}
 		{{#if currentUser}}
 			{{> userPolls}}
 		{{/if}}
 		{{> pollsResults}}
+		{{> userStream}}
+		{{> userInteractionWithStream}}
 </div>
 </template>
