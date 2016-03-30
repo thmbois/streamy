@@ -54,3 +54,4 @@ schiller:twit
 sewdn:humanize
 peerlibrary:reactive-mongo
 peerlibrary:server-autorun
+momentjs:moment

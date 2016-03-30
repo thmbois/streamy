@@ -56,6 +56,13 @@ Router.route("/admin/customize", function(){
   name: 'admin.customize'
 });
 
+Router.route("/admin/polls", function(){
+  this.layout(mainLayout);
+  checkForAdmin(this,"managePolls");
+}, {
+  name: 'admin.polls'
+});
+
 Router.route("/admin/customize/editPlugins", function(){
   this.layout(mainLayout);
   checkForAdmin(this,"customizeEditPlugins");
