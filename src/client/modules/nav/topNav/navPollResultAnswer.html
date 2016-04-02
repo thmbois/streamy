@@ -1,0 +1,17 @@
+<template name="navPollResultAnswer">
+  <li class="divider"></li>
+  <li>
+    <a href="#">
+      <div>
+        <p>
+          <strong>{{text}}</strong>
+          <span class="pull-right text-muted">{{percent count votes}}%</span>
+        </p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="{{percent count votes}}" aria-valuemin="0" aria-valuemax="100" style="width:{{percent count votes}}%">
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</template>

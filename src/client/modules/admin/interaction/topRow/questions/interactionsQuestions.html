@@ -1,0 +1,28 @@
+<template name="interactionsQuestions">
+{{#if this}}
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-question fa-fw"></i> Questions from your viewer.
+				</div>
+				<ul class="list-group">
+					{{#each this}}
+						<li class="list-group-item"><strong>{{question}}</strong>{{#quickRemoveButton collection="Interaction" _id=this._id class="btn bt-danger label label-danger pull-right"}}<i class="fa fa-times"></i>{{/quickRemoveButton}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+{{else}}
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<i class="fa fa-exclamation fa-fw"></i> No questions found.
+			</div>
+		</div>
+	</div>
+</div>
+{{/if}}
+</template>

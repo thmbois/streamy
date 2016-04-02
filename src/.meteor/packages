@@ -33,8 +33,8 @@ jacklam:material-colors
 reactive-dict
 aldeed:template-extension
 ccorcos:animate
-#ahref:irc
-thmbois:irc
+ahref:irc
+#thmbois:irc
 #jameslefrere:irc
 stolinski:stylus-multi
 aldeed:collection2
@@ -52,3 +52,6 @@ alanning:roles
 ongoworks:security
 schiller:twit
 sewdn:humanize
+peerlibrary:reactive-mongo
+peerlibrary:server-autorun
+momentjs:moment

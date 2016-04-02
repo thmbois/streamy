@@ -1,0 +1,19 @@
+<template name="managePollsEditModal">
+    <div class="modal-header">
+        <h4 class="modal-title">Edit</h4>
+    </div>
+    {{#autoForm collection="Polls" doc=context id="editPoll" type="update"}}
+    <div class="modal-body">
+        <!-- {{> quickForm collection="Polls" doc=context id="editPoll" type="update"}} -->
+        {{> afQuickField name='question'}}
+        {{> afQuickField name='icon'}}
+        {{> afQuickField name='answers'}}
+        {{> afQuickField name='allowMultipleAnswers'}}
+        {{> afQuickField name='allowAddAnswers'}}
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="managePollsEditModalClose" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" id="managePollsEditModalSave" class="btn btn-success">Save</button>
+    </div>
+    {{/autoForm}}
+</template>

@@ -1,24 +1,32 @@
-Meteor.subscribe("ircMessages", 9);
-Meteor.subscribe("ircLinks");
-Meteor.subscribe("ircConnections");
-Meteor.subscribe("ircChannels");
-
-var getIRCMessages = function (){
-  return IRCMessages.find({},{
+var getIRCMessages = function (chatConfig){
+  var channel = chatConfig.channel;
+  Meteor.subscribe("ircMessages", chatConfig.maxMessages,channel);
+  return IRCMessages.find({channel:"#"+channel},{
     sort: {
-      date_time:-1
+      timestamp:-1
     }
   });
 };
 
 Template.chat.helpers({
+  channel: function () {
+    Meteor.subscribe("Plugins");
+    var chatConfig = Plugins.findOne({_id:this._id},{fields:{chat:1}}).chat;
+    return chatConfig.channel;
+  },
   chat: function(){
-    return getIRCMessages();
+    Meteor.subscribe("Plugins");
+    var chatConfig = Plugins.findOne({_id:this._id},{fields:{chat:1}}).chat;
+    return getIRCMessages(chatConfig);
   },
   count: function(){
-    return getIRCMessages().count();
+    Meteor.subscribe("Plugins");
+    var chatConfig = Plugins.findOne({_id:this._id},{fields:{chat:1}}).chat;
+    return getIRCMessages(chatConfig).count();
   },
   counterPlusOne:  function(){
-    return getIRCMessages().count()+1;
+    Meteor.subscribe("Plugins");
+    var chatConfig = Plugins.findOne({_id:this._id},{fields:{chat:1}}).chat;
+    return getIRCMessages(chatConfig).count()+1;
   }
 });

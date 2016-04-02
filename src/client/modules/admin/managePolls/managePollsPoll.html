@@ -1,0 +1,31 @@
+<template name="managePollsPoll">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          {{question}}
+          <div class="pull-right">
+            <span class="label label-default label-md">Votes: {{votes}}</span>
+            <span class="label label-default label-md">Created: {{fromNow timestamp}}</span>
+            <button type="button" title="Edit" class="btn bt-primary label label-primary editPoll"><i class="fa fa-pencil-square-o"></i></button>
+            {{#if active}}
+              <button type="button" title="Deactivate" class="btn bt-warning label label-warning togglePoll"><i class="fa fa-toggle-off"></i></button>
+            {{else}}
+              <button type="button" title="Activate" class="btn bt-warning label label-warning togglePoll"><i class="fa fa-toggle-on"></i></button>
+              <button type="button" title="Delete" class="btn bt-danger label label-danger deletePoll"><i class="fa fa-trash"></i></button>
+            {{/if}}
+          </div>
+        </div>
+          <div class="panel-body">
+            <div>
+              <ul class="list-group">
+                  {{#each answers}}
+                    {{> answerResult}}
+                  {{/each}}
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</template>

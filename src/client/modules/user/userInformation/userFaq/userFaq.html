@@ -1,18 +1,18 @@
 <template name="userFaq">
+	{{#if this}}
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<i class="fa fa-flag fa-fw"></i> Frequently asked questions (FAQ)
 				</div>
-				 <div class="panel-body">
-					<div class="list-group">
-						<p class="list-group-item"><strong>Q: Where are you from?</strong> Germany</p>
-						<p class="list-group-item"><strong>Q: How old are you? </strong> 26</p>
-						<p class="list-group-item"><strong>Q: When are you doing Viewer games?</strong> Whenever I want, I will let you guys know - But please don't ask!</p>
-					</div>
-				</div>
+				<ul class="list-group">
+					{{#each this}}
+						<li class="list-group-item"><strong>Q: {{question}}</strong> {{answer}}</li>
+					{{/each}}
+				</ul>
 			</div>
 		</div>
 	</div>
+	{{/if}}
 </template>

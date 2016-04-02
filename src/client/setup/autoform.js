@@ -19,6 +19,12 @@ AutoForm.hooks({
     onSuccess: function(formType, result) {
       document.getElementById("addPollModalClose").click();
     }
+  },
+  editPoll: {
+    // Called when any submit operation succeeds
+    onSuccess: function(formType, result) {
+      document.getElementById("managePollsEditModalClose").click();
+    }
   }
 });
 
