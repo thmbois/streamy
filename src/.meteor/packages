@@ -55,3 +55,4 @@ sewdn:humanize
 peerlibrary:reactive-mongo
 peerlibrary:server-autorun
 momentjs:moment
+iron:middleware-stack@1.1.0
